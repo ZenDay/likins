@@ -1,9 +1,54 @@
-body{
+body,p,input{
 	padding: 0;
 	margin: 0;
+}
+.hidden{
+	display: none;
 }
 
 .bg-can{
 	width: 100%;
 	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: -1000;
 }
+	.bg-can img{
+		position: relative;
+	}
+.submit{
+	text-align: center;
+	background-image: url(../images/SignIn_Window_small.png);
+	background-repeat: no-repeat;
+	width: 480px;
+	height: 380px;
+	color: #a7a6ac;
+}
+	.submit img{
+		padding-top: 35px;
+	}
+	.submit p{
+		color: #fff;
+		font-family: "Georgia";
+		font-size: 25px;
+		margin-top: 15px;
+	}
+	.submit form{
+		margin-bottom: 15px;
+	}
+		.submit input{
+			width: 200px;
+			height: 30px;
+			margin: 7px 100px;
+			border: solid #5a6f7d 1px;
+			border-radius: 3px;
+		}
+		.submit input[type=submit]{
+			background-color: #42a8f5;
+			color: #fff;
+			font-size: 17px;
+			line-height: 27px;
+		}
+	.submit a{
+		color: #a7a6ac;
+	}
