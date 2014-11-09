@@ -2,10 +2,22 @@ body,p,input{
 	padding: 0;
 	margin: 0;
 }
+a{
+	color: #484848;
+	text-decoration: none;
+}
+body{
+	background-color: #e8e8e8;
+	font-family: "Microsoft Yahei"
+}
 .hidden{
 	display: none;
 }
 
+
+
+
+/*首页*/
 .bg-can{
 	width: 100%;
 	overflow: hidden;
@@ -51,4 +63,137 @@ body,p,input{
 		}
 	.submit a{
 		color: #a7a6ac;
+	}
+
+
+
+
+/*导航*/
+nav{
+	height: 55px;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0 3px 5px #888888;
+	margin-bottom: 10px;
+}
+	nav img{
+		margin-left: 30px;
+	}
+	nav form{
+		display: inline-block;
+		position: absolute;
+		left: 35%;
+		top: 15px;
+	}
+		nav form .search{
+			height: 25px;
+			width: 350px;
+			background-color: #e1e4e4;
+			border: none;
+			border-radius: 3px;
+		}
+		nav form .search-button{
+			position: relative;
+			cursor: pointer;
+			right: 32px;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			text-align: center;
+		}
+	nav .real-nav{
+		display: inline-block;
+		float: right;
+		margin-top: 15px;
+	}
+		nav .real-nav a{
+			height: 25px;
+			display: inline-block;
+			line-height: 25px;
+			border-radius: 5px;
+			width: 25px;
+			text-align: center;
+			margin-right: 15px;
+			padding: 0 3px;
+		}
+		nav .real-nav a:hover{
+			background-color: #e8e8e8;
+		}
+		nav .real-nav a.user{
+			width: auto;
+		}
+
+
+
+/*个人主页内容*/
+@media(min-width: 1091px){
+	#home-main{
+		width: 100%;
+		position: absolute;
+	}
+}
+@media(max-width: 1090px){
+	#home-main{
+		width: 1100px;
+		position: absolute;
+	}
+}
+	#home-main .photo-collapse{
+		width: 23%;
+		margin: 5px;
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 0 5px #888888;
+		display: inline-block;
+		color: #484848;
+		float: left;
+		position: absolute;
+	}
+	#home-main .photo-collapse>img{
+		width: 100%;
+	}
+	#home-main .photo-collapse p{
+		width: 100%;
+		border-bottom: 1px solid #e8e8e8;
+		font-size: 18px;
+		padding: 12px 10px; 
+		text-align: left;
+	}
+	#home-main .photo-collapse .mes{
+		text-align: left;
+		padding: 10px;
+		display: inline-block;
+	}
+		#home-main .photo-collapse .mes a{
+			margin-right: 10px;
+		}
+			#home-main .photo-collapse .mes a img{
+				width: 22%;
+			}
+			#home-main .photo-collapse .mes a.user-name{
+				font-size: 20px;
+				position: relative;
+				bottom: 20px;
+				right: 55px;
+			}
+	#home-main .photo-collapse .comment-count,.like-count{
+		display: inline-block;
+		position: absolute;
+		margin-top: 10px;
+		text-align: center;
+	}
+	#home-main .photo-collapse .comment-count{
+		right: 70px;
+		bottom: 12px;
+	}
+	#home-main .photo-collapse .like-count{
+		right: 15px;
+		bottom: 12px;
+	}
+	#home-main .photo-collapse i{
+		font-size: 30px;
+		display: block;
+	}
+	#home-main .photo-collapse span{
+		font-size: 13px;
 	}
