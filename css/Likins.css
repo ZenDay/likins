@@ -151,6 +151,7 @@ nav{
 	}
 	#home-main .photo-collapse>img{
 		width: 100%;
+		cursor: pointer;
 	}
 	#home-main .photo-collapse p{
 		width: 100%;
@@ -176,19 +177,15 @@ nav{
 				bottom: 20px;
 				right: 55px;
 			}
-	#home-main .photo-collapse .comment-count,.like-count{
+	#home-main .photo-collapse .like-count{
 		display: inline-block;
 		position: absolute;
 		margin-top: 10px;
 		text-align: center;
 	}
-	#home-main .photo-collapse .comment-count{
-		right: 70px;
-		bottom: 12px;
-	}
 	#home-main .photo-collapse .like-count{
-		right: 15px;
-		bottom: 12px;
+		right: 20px;
+		bottom: 20px;
 	}
 	#home-main .photo-collapse i{
 		font-size: 30px;

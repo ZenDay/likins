@@ -6,7 +6,6 @@ $(window).resize(function() {
  });
 $(window).scroll(function() {
 	if(checkScroll()){
-		alert("suxx");
 	}
 });
 
