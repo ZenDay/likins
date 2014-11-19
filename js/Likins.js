@@ -22,4 +22,19 @@ $(function() {
 	 $(".bg-can img").animate({
 	 	top: "-100px"
 	 },5000)
+
+
+
+
+	 $("#img-detail").css("left",winW/2-400+"px")
+	 photoOn();
 })
+
+
+
+function photoOn () {
+	var $dtimgH = $("#img-detail>.dt-img>img").height();
+	if($dtimgH < 550){
+		$("#img-detail>.dt-img>img").css("margin-top",(550-$dtimgH)/2);
+	}
+}

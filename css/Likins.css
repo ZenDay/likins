@@ -8,7 +8,7 @@ a{
 }
 body{
 	background-color: #e8e8e8;
-	font-family: "Microsoft Yahei"
+	font-family: "Microsoft Yahei";
 }
 .hidden{
 	display: none;
@@ -16,6 +16,91 @@ body{
 ul{
 	list-style-type: none;
 }
+
+
+/*具体图片弹窗*/
+#bg-shadow{
+	width: 200%;
+	height: 200%;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	background-color: #e8e8e8;
+	filter:alpha(opacity=90);
+	-moz-opacity:0.90;
+	opacity:0.90;
+}
+#img-detail{
+	width: 800px;
+	height: 550px;
+	position: fixed;
+	z-index: 1000;
+	background-color: #272727;
+	border-radius: 8px;
+	top: 60px;
+	box-shadow: 0 0 5px #888888;
+	overflow: hidden;
+}
+	#img-detail .left-angle{
+		height: 100%;
+		width: 65px;
+		text-align: center;
+		position: fixed;
+	}
+	#img-detail .right-angle{
+		height: 100%;
+		width: 65px;
+		text-align: center;
+		position: fixed;
+		margin-left: 515px;
+	}
+		#img-detail i{
+			font-size: 80px;
+			color: #494c4d;
+			margin-top: 250px;
+			cursor: pointer;
+		}
+	#img-detail .tag-holder{
+		margin-top: 522px;
+		position: fixed;
+		width: 580px;
+		height: 28px;
+		background-color: #000;
+		filter:alpha(opacity=70);
+		-moz-opacity:0.70;
+		opacity:0.70;
+		border-radius: 8px;
+	}
+	#img-detail .dt-img{
+		width: 580px;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+		#img-detail .dt-img img{
+			width: 400px;
+		}
+	#img-detail .img-mes{
+		background-color: #fff;
+		width: 220px;
+		height: 100%;
+		float: right;
+	}
+		#img-detail .img-mes .user{
+			border-bottom: solid 1px #ccc;
+			height: 80px;
+		}
+			#img-detail .img-mes .user img{
+				width: 55px;
+				margin: 12px;
+				float: left;
+			}
+			#img-detail .img-mes .user span{
+				font-size: 25px;
+				color: #484848;
+				line-height: 80px;
+				float: left;
+			}
 
 
 
