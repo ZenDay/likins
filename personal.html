@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/Likins.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/Likins.js"></script>
 </head>
 <body>
 	<!-- 导航 -->
@@ -28,6 +29,83 @@
 		</div>
 	</nav>
 
+
+	<!-- 具体图片弹窗 -->
+	<div id="bg-shadow" class="hidden">
+	</div>
+	<div id="img-detail" class="hidden">
+		<div class="left-angle">
+			<i class="fa fa-angle-left"></i>
+		</div>
+		<div class="dt-img">
+			<img src="images/Posted_picture.png">
+		</div>
+		<div class="right-angle">
+			<i class="fa fa-angle-right"></i>
+		</div>
+		<div class="tag-holder"></div>
+		<div class="img-mes">
+			<div class="user">
+				<img src="images/Avatar.png">
+				<span>.Bao</span>
+			</div>
+			<div class="des">
+				<p>啦啦啦啦啦啦~<br>
+					没想到我的腿也能这么销魂~<br>
+					求赞~
+				</p>
+				<a href="#">展开</a>
+			</div>
+			<div class="com-count">
+				<i class="fa fa-comment-o"></i>
+				<span>12345</span>
+			</div>
+			<div class="like-count">
+				<i class="fa fa-thumbs-o-up"></i>
+				<span>12345</span>
+			</div>
+			<div class="comments-can">
+				<div class="comment">
+					<img src="images/Avatar.png">
+					<span>Z Daniel</span>
+					<p>我拍的~<br>
+						啦~<br>
+						啦~<br>
+						啦~
+					</p>
+					<a href="#">回复</a>
+				</div>
+				<div class="comment">
+					<img src="images/Avatar.png">
+					<span>浪子回头</span>
+					<p>你为什么这么low？
+					</p>
+					<a href="#">回复</a>
+				</div>
+				<div class="comment">
+					<img src="images/Avatar.png">
+					<span>熊星人</span>
+					<p>诶~不忍直视
+					</p>
+					<a href="#">回复</a>
+				</div>
+				<div class="comment">
+					<img src="images/Avatar.png">
+					<span>不世逗比</span>
+					<p>你造吗？其实我，宣你好久了~做我男票好吗？
+					</p>
+					<a href="#">回复</a>
+				</div>
+			</div>
+			<form class="myCom">
+				<textarea></textarea>
+				<i class="fa fa-smile-o"></i>
+				<input type="submit" value="评论">
+			</form>
+		</div>
+	</div>
+
+	<!-- 个人信息 -->
 	<div id="personal-mes">
 		<img src="images/yuantu.jpg" class="per-bg">
 		<img src="images/Avatar.png" class="per-hp">
@@ -56,6 +134,8 @@
 		</div>
 	</div>
 
+
+	<!-- 上传的图片 -->
 	<div id="home-main">
 		<div class="photo-collapse">
 			<img src="images/Posted_picture.png">

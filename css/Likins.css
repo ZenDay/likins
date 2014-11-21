@@ -1,4 +1,4 @@
-body,p,input{
+body,p,input,textarea{
 	padding: 0;
 	margin: 0;
 }
@@ -16,6 +16,8 @@ body{
 ul{
 	list-style-type: none;
 }
+::-webkit-scrollbar{width: 12px;background-color: #a5a5a5;}
+::-webkit-scrollbar-thumb{background-color: #fff;border: 2px solid #a5a5a5;}
 
 
 /*具体图片弹窗*/
@@ -54,22 +56,27 @@ ul{
 		position: fixed;
 		margin-left: 515px;
 	}
-		#img-detail i{
+		#img-detail .left-angle i{
+			font-size: 80px;
+			color: #494c4d;
+			margin-top: 250px;
+			cursor: pointer;
+		}
+		#img-detail .right-angle i{
 			font-size: 80px;
 			color: #494c4d;
 			margin-top: 250px;
 			cursor: pointer;
 		}
 	#img-detail .tag-holder{
-		margin-top: 522px;
-		position: fixed;
+		position: absolute;
+		bottom: 0;
 		width: 580px;
 		height: 28px;
 		background-color: #000;
 		filter:alpha(opacity=70);
 		-moz-opacity:0.70;
 		opacity:0.70;
-		border-radius: 8px;
 	}
 	#img-detail .dt-img{
 		width: 580px;
@@ -100,6 +107,116 @@ ul{
 				color: #484848;
 				line-height: 80px;
 				float: left;
+			}
+		#img-detail .img-mes .des{
+			border-bottom: solid 2px #ccc;
+			height: 75px;
+			overflow: hidden;
+		}
+			#img-detail .img-mes .des p{
+				margin: 10px;
+				font-size: 12px;
+				line-height: 21px;
+			}
+			#img-detail .img-mes .des a{
+				position: absolute;
+				top: 135px;
+				right: 10px;
+				font-size: 12px;
+				width: 30px;
+				height: 16px;
+				text-align: center;
+				border-radius: 4px;
+			}
+			#img-detail .img-mes .des a:hover{
+				background-color: #e8e8e8;
+			}
+		#img-detail .img-mes .com-count{
+			width: 49%;
+			text-align: center;
+			height: 35px;
+			float: left;
+			border-right: solid 1px #ccc;
+			line-height: 35px;
+			cursor: pointer;
+		}
+		#img-detail .img-mes .like-count{
+			width: 49%;
+			text-align: center;
+			height: 35px;
+			float: right;
+			line-height: 35px;
+			cursor: pointer;
+		}
+		#img-detail .img-mes .com-count i,#img-detail .img-mes .like-count i{
+			font-size: 18px;
+			color: #4a4a4a;
+		}
+		#img-detail .img-mes .com-count span,#img-detail .img-mes .like-count span{
+			font-size: 12px;
+			color: #4a4a4a;
+		}
+		#img-detail .img-mes .comments-can{
+			height: 245px;
+			border-top: solid 3px #ccc;
+			border-bottom: solid 1px #ccc;
+			clear: both;
+			overflow-y: auto;
+		}
+			#img-detail .img-mes .comments-can .comment{
+				border-bottom: 2px solid #ccc;
+			}
+				#img-detail .img-mes .comments-can .comment img{
+					width: 23px;
+					height: 23px;
+					float: left;
+					margin-left: 12px;
+					margin-top: 5px;
+				}
+				#img-detail .img-mes .comments-can .comment span{
+					line-height: 23px;
+					font-size: 13px;
+					margin: 5px;
+					float: left;
+					font-weight: 700;
+				}
+				#img-detail .img-mes .comments-can .comment p{
+					font-size: 13px;
+					clear: both;
+					margin-left: 40px; 
+					width: 130px;
+					display: inline-block;
+				}
+				#img-detail .img-mes .comments-can .comment a{
+					font-size: 12px;
+					text-decoration: underline;
+					padding-left: 3px;
+				}
+		#img-detail .img-mes .myCom{
+			width: 200px;
+			padding: 10px;
+		}
+			#img-detail .img-mes .myCom textarea{
+				width: 100%;
+				max-width: 100%;
+				height: 60px;
+				max-height: 60px;
+				border: none;
+				background-color: #e8e8e8;
+			}
+			#img-detail .img-mes .myCom i{
+				font-size: 21px;
+				color: #484848;
+				line-height: 25px;
+			}
+			#img-detail .img-mes .myCom input{
+				width: 105px;
+				height: 25px;
+				float: right;
+				color: #fff;
+				background-color: #29abe2;
+				border: none;
+				font-size: 12px;
 			}
 
 
