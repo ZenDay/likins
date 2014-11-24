@@ -3,71 +3,73 @@ package likinsDatabase;
 import java.sql.ResultSet;
 
 public class SignInAndLogin extends Access_db{
-    private String userID;  //账号
-	private String password; //密码
-	private String sql;      //执行各种操作的sql语句
+    private String userID; 
+	private String password; 
+	private String sql;      //sql statement to perform various operations 
 	
+	/** constructor */
 	public SignInAndLogin(){
 		userID="";
 		password="";
 	}
-	/** 设置账号 */
+	/** set user ID */
 	public void setUserID(String id){
 		this.userID=id;
 	}
 	
-	/** 获取账号 */
+	/** get user ID */
 	public String getUserID(){
 		return userID;
 	}
 	
-	/** 设置密码 */
+	/** set password */
 	public void setPassword(String pass){
 		this.password=pass;
 	}
 	
-	/** 获取密码 */
+	/** get password */
 	public String getPassword(){
 		return password;
 	}
 	
-	/** 判断账号是否存在 */
+	/** Determine whether the ID is exist */
 	public boolean isUserIDExist(String userid){
-		//发送sql语句查询该账号是否存在
+		//query the ID on table userinfo in mysql 
 		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"';";
 		ResultSet rs=null;
 		boolean is_exist=false;
 		try{
 			rs=super.exeSqlQuery(sql);
-			while(rs.next()){  //rs不为null则返回true，若是null则返回false
-				is_exist=true;  //该账号存在
+			while(rs.next()){  //if rs is null,return false;else return true
+				is_exist=true;  //the ID is exist
 				break;
 			}
 		}catch(Exception e){
-			System.out.println(e.toString());  //输出异常信息
+			System.out.println(e.toString());  //print the error message
 		}
 		return is_exist;
 	}
 	
-	/** 添加用户  返回true则添加成功，否则不成功 */
+	/** add user to the table userinfo */
 	public boolean addUser(String id,String password){
-		boolean is_add_success=false;  //判断是否成功插入
+		boolean is_add_success=false;  //Determine whether add successful
 		
 		sql="insert into userinfo (userID,password) value("+"'"+getUserID()+"','"+getPassword()+"');";
 		is_add_success=super.exeSQL(sql);
 		return is_add_success;	
 	}
 	
-	/** 判断密码是否正确，正确则返回true，否则返回false */
+	/** Determine whether the password is correct */
 	public boolean isPasswordValid(String userid,String pass){
+		//send the sql statement to select
 		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"' and";
 		sql=sql+"password="+"'"+getPassword()+"';";
-		ResultSet rs=null;
-		boolean is_password_valid=false;
+		ResultSet rs=null;      //The result set returned by the query 
+		boolean is_password_valid=false;   //determine whether the password is correct
 		try{
 			rs=super.exeSqlQuery(sql);
-			while(rs.next()){   //若结果集不为空，即账号密码匹配
-				is_password_valid=true;   //则表示存在
+			while(rs.next()){       //if rs is null,return false;else return true
+				is_password_valid=true;   //the password is correct
 				break;
 			}
 		}catch(Exception e){
