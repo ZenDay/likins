@@ -12,6 +12,13 @@ public class SignInAndLogin extends Access_db{
 		userID="";
 		password="";
 	}
+	
+	/** constructor */
+	public SignInAndLogin(String userid,String pass){
+		userID=userid;
+		password=pass;
+	}
+	
 	/** set user ID */
 	public void setUserID(String id){
 		this.userID=id;
@@ -33,9 +40,9 @@ public class SignInAndLogin extends Access_db{
 	}
 	
 	/** Determine whether the ID is exist */
-	public boolean isUserIDExist(String userid){
+	public boolean isUserIDExist(){
 		//query the ID on table userinfo in mysql 
-		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"';";
+		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"';"; 
 		ResultSet rs=null;
 		boolean is_exist=false;
 		try{
@@ -51,7 +58,7 @@ public class SignInAndLogin extends Access_db{
 	}
 	
 	/** add user to the table userinfo */
-	public boolean addUser(String id,String password){
+	public boolean addUser(){
 		boolean is_add_success=false;  //Determine whether add successful
 		
 		sql="insert into userinfo (userID,password) value("+"'"+getUserID()+"','"+getPassword()+"');";
@@ -60,7 +67,7 @@ public class SignInAndLogin extends Access_db{
 	}
 	
 	/** Determine whether the password is correct */
-	public boolean isPasswordValid(String userid,String pass){
+	public boolean isPasswordValid(){
 		//send the sql statement to select
 		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"' and";
 		sql=sql+"password="+"'"+getPassword()+"';";
