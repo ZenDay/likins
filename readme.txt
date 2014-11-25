@@ -1,2 +1,2 @@
 As a social website of photo,L!k!ns would be an awesome website.
-form:Zen Day.
+form:Zen Day...
