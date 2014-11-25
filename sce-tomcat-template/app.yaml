@@ -1,0 +1,10 @@
+appid: 849329645
+start: $TOMCAT_START
+web_health: true
+web_health_conf: 
+    path: /
+    timeout: 500ms
+    success: [200,201,403,301,302]
+try_restart: 
+    enable: true
+    fall: 10
