@@ -50,12 +50,8 @@ public class SignInAndLogin extends Access_db{
 			
 			while(rs.next()){  //if rs is null,return false;else return true
 			    is_exist=true;  //the ID is exist
-				//System.out.println(is_exist);
-				//return is_exist;
-				//break;
 			}
 
-			
 		}catch(Exception e){
 			System.out.println(e.toString());  //print the error message
 		}
