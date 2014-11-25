@@ -42,15 +42,20 @@ public class SignInAndLogin extends Access_db{
 	/** Determine whether the ID is exist */
 	public boolean isUserIDExist(){
 		//query the ID on table userinfo in mysql 
-		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"';"; 
+		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"' limit 1;"; 
 		ResultSet rs=null;
 		boolean is_exist=false;
 		try{
 			rs=super.exeSqlQuery(sql);
+			
 			while(rs.next()){  //if rs is null,return false;else return true
-				is_exist=true;  //the ID is exist
-				break;
+			    is_exist=true;  //the ID is exist
+				//System.out.println(is_exist);
+				//return is_exist;
+				//break;
 			}
+
+			
 		}catch(Exception e){
 			System.out.println(e.toString());  //print the error message
 		}
@@ -83,5 +88,9 @@ public class SignInAndLogin extends Access_db{
 			System.out.println(e.toString());
 		}
 	return is_password_valid;
+	}
+	
+	public void destroy(){
+		super.destroy();
 	}
 }

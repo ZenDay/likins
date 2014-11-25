@@ -52,12 +52,23 @@ public class Access_db {
 	public ResultSet exeSqlQuery(String sql){
 		try{
 			stmt=conn.createStatement();
-			stmt.executeUpdate(sql);
+			rs=stmt.executeQuery(sql);
 		}
 		catch(Exception e){
 			System.out.println(e.toString());  //输出异常信息
 			rs=null;
 		}
 		return rs;
+	}
+	
+	public void destroy(){
+		try {
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
