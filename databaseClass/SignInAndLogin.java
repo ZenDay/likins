@@ -41,27 +41,26 @@ public class SignInAndLogin extends Access_db{
 	
 	/** Determine whether the ID is exist */
 	public boolean isUserIDExist(){
-		//query the ID on table userinfo in mysql 
+		//query the ID on table user info in mysql 
 		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"' limit 1;"; 
 		ResultSet rs=null;
-		boolean is_exist=false;
+		boolean is_exist=false;  //do not exist
 		try{
 			rs=super.exeSqlQuery(sql);
-			
-			while(rs.next()){  //if rs is null,return false;else return true
-			    is_exist=true;  //the ID is exist
+			if(rs.next()){  //if rs is null,return false;else return true
+			    is_exist=true;  //the ID is exist 
 			}
 
 		}catch(Exception e){
 			System.out.println(e.toString());  //print the error message
 		}
+		
 		return is_exist;
 	}
 	
 	/** add user to the table userinfo */
 	public boolean addUser(){
 		boolean is_add_success=false;  //Determine whether add successful
-		
 		sql="insert into userinfo (userID,password) value("+"'"+getUserID()+"','"+getPassword()+"');";
 		is_add_success=super.exeSQL(sql);
 		return is_add_success;	
@@ -71,14 +70,13 @@ public class SignInAndLogin extends Access_db{
 	public boolean isPasswordValid(){
 		//send the sql statement to select
 		sql="select ID,userID from userinfo where userID="+"'"+getUserID()+"' and";
-		sql=sql+"password="+"'"+getPassword()+"';";
+		sql=sql+" password="+"'"+getPassword()+"' limit 1;";
 		ResultSet rs=null;      //The result set returned by the query 
 		boolean is_password_valid=false;   //determine whether the password is correct
 		try{
 			rs=super.exeSqlQuery(sql);
-			while(rs.next()){       //if rs is null,return false;else return true
+			if(rs.next()){       //if rs is null,return false;else return true
 				is_password_valid=true;   //the password is correct
-				break;
 			}
 		}catch(Exception e){
 			System.out.println(e.toString());

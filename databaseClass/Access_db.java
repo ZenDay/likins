@@ -39,6 +39,7 @@ public class Access_db {
 		try{
 			stmt=conn.createStatement();  //创建Statement对象
 			stmt.executeUpdate(sql);    //执行insert 或update语句
+			System.out.println("insert into mysql ");
 			return true;
 		}
 		catch(Exception e){
@@ -53,6 +54,7 @@ public class Access_db {
 		try{
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(sql);
+			System.out.println("select mysql ");
 		}
 		catch(Exception e){
 			System.out.println(e.toString());  //输出异常信息
