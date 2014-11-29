@@ -240,6 +240,7 @@ ul{
 	width: 480px;
 	height: 380px;
 	color: #a7a6ac;
+	position: fixed;
 }
 	.submit img{
 		padding-top: 35px;
@@ -259,12 +260,30 @@ ul{
 			margin: 7px 100px;
 			border: solid #5a6f7d 1px;
 			border-radius: 3px;
+			padding: 0 5px;
 		}
 		.submit input[type=submit]{
 			background-color: #42a8f5;
 			color: #fff;
 			font-size: 17px;
 			line-height: 27px;
+		}
+		.submit span{
+			background-color: #e21100;
+			color: #fff;
+			height: 20px;
+			position: absolute;
+			padding: 3px 5px;
+			border-radius: 3px;
+			right: 140px;
+			cursor: default;
+			font-size: 13px;
+		}
+		.submit span.erruser{
+			top: 160px;
+		}
+		.submit span.errpass{
+			top: 206px;
 		}
 	.submit a{
 		color: #a7a6ac;
