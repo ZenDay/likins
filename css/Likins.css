@@ -393,7 +393,9 @@ nav{
 			margin-right: 10px;
 		}
 			#home-main .photo-collapse .mes a img{
-				width: 22%;
+				width: 46px;
+				height: 46px;
+				border-radius: 1000px;
 			}
 			#home-main .photo-collapse .mes a.user-name{
 				font-size: 20px;
@@ -466,4 +468,24 @@ nav{
 		line-height: 50px;
 		font-size: 20px;
 		box-shadow: 0 0 5px #888888;
+	}
+
+/*个人设置*/
+#personal-set{
+	background-color: #fff;
+	border-radius: 10px;
+	width: 94%;
+	margin: 20px auto;
+	font-size: 20px;
+	box-shadow: 0 0 5px #888888;
+}
+	#personal-set .left-bar{
+		width: 25%;
+		display: inline-block;
+		border-right: 3px solid #ccc;
+	}
+	#personal-set .setting{
+		width: 70%;
+		display: inline-block;
+		padding: 20px;
 	}
