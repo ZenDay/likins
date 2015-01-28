@@ -5,8 +5,15 @@
 	<title>L!k!ns--share your life with color</title>
 	<link rel="stylesheet" type="text/css" href="css/Likins.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.min.css">
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/Likins.js"></script>
+	<script type="text/javascript" src="js/jquery.Jcrop.min.js"></script>
+	<script type="text/javascript" src="js/ShowImage.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			showImage("img-upload","previewImg","cutImg");
+		});
+	</script>
 </head>
 <body>
 	<!-- 导航 -->
@@ -30,30 +37,53 @@
 	</nav>
 	<!-- 个人设置 -->
 	<div id="personal-set">
-		<div class="left-bar">
-			<ul>
-				<li>头像</li>
-				<li>个人信息</li>
-				<li>安全设置</li>
-			</ul>
-		</div>
 		<div class="setting">
-			<form>
-				<p>图片上传功能，押后</p></form>
-			<form>
+			<div class="user-info">
+			<h3>个人信息</h3>
+			<div class="avatarImage">
+				<label>头像</label>
+				<img src="images/Avatar.png" id="previewImg">
+				<br>
+				<img src="" class="hidden" id="cutImg">
+				<form>
+					<label for="img-upload" id="up-can">
+						选择图片
+					<input id="img-upload" type="file" accept="image/*">
+					</label>
+					<input id="x" value="" type="text" class="hidden">
+					<input id="y" value="" type="text" class="hidden">
+					<input id="w" value="" type="text" class="hidden">
+					<input id="h" value="" type="text" class="hidden">
+					<input type="submit" id="submitImg" class="hidden">
+				</form>
+			</div>
+			<form class="message">
 				<fieldset>
+					<label>昵称</label>
+					<input type="text" value="" id="mes-name">
 				</fieldset>
-				<fieldset></fieldset>
-				<fieldset></fieldset>
-				<fieldset></fieldset>
-			</form>
-			<form>
-				<input>
-				<input>
+				<fieldset>
+					<label>个人签名</label>
+					<input type="text"  value="" id="mes-sign">
+				</fieldset>
 				<input type="submit">
 			</form>
+			</div>
+			<div class="security">
+			<h3>安全设置</h3>
+			<form class="password">
+				<fieldset>
+					<label>旧密码</label>
+					<input type="password" id="old-pass">
+				</fieldset>
+				<fieldset>
+					<label>新密码</label>
+					<input type="password" id="new-pass">
+				</fieldset>
+				<input type="submit">
+			</form>
+			</div>
 		</div>
 	</div>
 </body>
-	<script type="text/javascript" src="js/Waterfall.js"></script>
 </html>

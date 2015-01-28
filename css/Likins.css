@@ -1,4 +1,4 @@
-body,p,input,textarea{
+body,p,input,textarea,fieldset,h3,button{
 	padding: 0;
 	margin: 0;
 }
@@ -15,6 +15,9 @@ body{
 }
 ul{
 	list-style-type: none;
+}
+fieldset{
+	border: none;
 }
 ::-webkit-scrollbar{width: 12px;background-color: #a5a5a5;}
 ::-webkit-scrollbar-thumb{background-color: #fff;border: 2px solid #a5a5a5;}
@@ -479,13 +482,92 @@ nav{
 	font-size: 20px;
 	box-shadow: 0 0 5px #888888;
 }
-	#personal-set .left-bar{
-		width: 25%;
-		display: inline-block;
-		border-right: 3px solid #ccc;
-	}
 	#personal-set .setting{
-		width: 70%;
 		display: inline-block;
 		padding: 20px;
 	}
+		#personal-set .setting>div{
+			border-radius: 3px;
+			width: 700px;
+			margin: 30px 40px;
+			border-bottom: 1px solid #d8d8d8;
+		}
+			#personal-set .setting>div h3{
+				font-size: 15px;
+				color: #333;
+				border-radius: 3px 3px 0 0;
+				border-style: solid solid none solid;
+				border-color: #d8d8d8 #d8d8d8 #fff #d8d8d8;
+				border-width: 1px;
+				padding: 10px;
+				background-color: #f5f5f5;
+			}
+			#personal-set .setting>div .avatarImage{
+				border-style: solid solid none solid;
+				border-color: #d8d8d8 #d8d8d8 #fff #d8d8d8;
+				border-width: 1px;
+				padding: 10px;
+			}
+				#personal-set .setting>div .avatarImage label{
+					display: block;
+					margin-bottom: 20px;
+					color: #666;
+					font-size: 1>px;
+				}
+				#personal-set .setting>div .avatarImage #previewImg{
+					height: 150px;
+					width: 150px;
+				}
+				#personal-set .setting>div .avatarImage #up-can{
+					cursor: pointer;
+					position: relative;
+					margin: 18px 38px;
+					padding: 7px;
+					border-radius: 3px;
+					background-color: #eee;
+					display: inline-block;
+					color: #484848;
+					font-size: 15px;
+				}
+				#personal-set .setting>div .avatarImage #up-can input{
+					position: absolute;
+					left: 0;
+					display: none;
+				}
+				#personal-set .setting>div .avatarImage input{
+					margin-top: 20px;
+				}
+			#personal-set .setting>div>form{
+				border-style: solid solid none solid;
+				border-color: #d8d8d8 #d8d8d8 #fff #d8d8d8;
+				border-width: 1px;
+				padding: 10px;
+			}
+				#personal-set .setting form input[type=submit]{
+					width: 90px;
+					height: 25px;
+					color: #fff;
+					background-color: #29abe2;
+					border: none;
+					font-size: 12px;
+					border-radius: 3px;
+					cursor: pointer;
+				}
+				#personal-set .setting form fieldset{
+					font-size: 15px;
+					margin-bottom: 10px;
+				}
+				#personal-set .setting form fieldset label{
+					color: #666;
+					margin-bottom: 6px;
+					display: block;
+				}
+				#personal-set .setting form fieldset input{
+					font-size: 13px;
+					width: 300px;
+					background-color: #fafafa;
+					border: 1px solid #ccc;
+					border-radius: 5px;
+					padding: 5px;
+					display: block;
+				}
