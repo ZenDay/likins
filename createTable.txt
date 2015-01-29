@@ -1,0 +1,48 @@
+#user表
+create table userinfo (ID int(15) not null auto_increment primary key,
+userID char(20) not null,
+password char(20) not null,
+username char(20) not null,
+signature varchar(100) default null,
+portrait varchar(100) not null,
+sessionID  char(35) default null
+)
+engine=MyISAM default charset=gbk;
+
+#user_picture 表
+create table user_picture (picture_id int(8)  auto_increment primary key,
+ID int(15) not null ,
+picture_path varchar(100) default null,
+introduction varchar(280) default null,
+time datetime default null
+)engine=MyISAM default charset=gbk;
+
+#用户关系表
+create table user_relation (relation_id int(15) not null auto_increment primary key,
+ID int(15) not null,
+follow_id int(15) default null,
+followed_id int(15) default null
+)engine=MyISAM default charset=gbk;
+
+#评论表
+create table comment (comment_id int(8) not null auto_increment primary key,
+picture_id int(8) not null,
+reviewer_id int(15) not null,
+comment_content varchar(60) not null,
+comment_time datetime not null
+)engine=MyISAM default charset=gbk;
+
+#消息表
+create table message(message_id int(4) auto_increment primary key,
+ID int(15),
+messageType smallint(2) not null,
+messageContent varchar(280) not null,
+readUnread smallint(1) not null
+)engine=MyISAM default charset=gbk;
+
+#点赞表
+create table  praise(praise_id int(8) not null auto_increment primary key,
+picture_id int(8) not null,
+praiser_id int(15) not null,
+praise_number int (8) default 0
+)engine=MyISAM default charset=gbk;
