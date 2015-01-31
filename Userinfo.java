@@ -7,6 +7,7 @@ import java.sql.SQLException;
 public class Userinfo extends Access_db{
 	private String userID;  
 	private String username; 
+	private String password;
 	private String signature;   //signature path
 	private String portrait;   //portrait path
 	private String sql;       //sql statement to perform various operations 
@@ -15,14 +16,16 @@ public class Userinfo extends Access_db{
 	public Userinfo(){
 		userID="";
 		username="";
+		password="";
 		signature="";
 		portrait="";
 	}
 	
 	/** constructor */
-	public Userinfo(String userid,String name,String signaturePath,String portraitPath){
+	public Userinfo(String userid,String name,String pass,String signaturePath,String portraitPath){
 		userID=userid;
 		username=name;
+		password=pass;
 		signature=signaturePath;
 		portrait=portraitPath;
 	}
