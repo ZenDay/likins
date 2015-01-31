@@ -182,5 +182,21 @@ public class Userinfo extends Access_db{
 		}
 		return portraitPath;
 	}
-
+	
+	/** Determine whether the username is exist */
+	public boolean isUserNameExist(){
+		ResultSet rs=null;
+		//query the username on table userinfo
+		sql="select * from userinfo where username='"+getUsername()+"';";
+		boolean is_exist=false;  //do not exist
+		try{
+			rs=super.exeSqlQuery(sql);
+			if(rs.next()){
+				is_exist=true;   //username is exist, return true
+			}
+		}catch (Exception e) {
+			System.out.println(e.toString());// TODO: handle exception
+		}
+		return is_exist;
+	}
 }
