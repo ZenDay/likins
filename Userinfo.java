@@ -7,6 +7,7 @@ import java.sql.SQLException;
 public class Userinfo extends Access_db{
 	private String userID;  
 	private String username; 
+	private String password;
 	private String signature;   //signature path
 	private String portrait;   //portrait path
 	private String sql;       //sql statement to perform various operations 
@@ -15,14 +16,16 @@ public class Userinfo extends Access_db{
 	public Userinfo(){
 		userID="";
 		username="";
+		password="";
 		signature="";
 		portrait="";
 	}
 	
 	/** constructor */
-	public Userinfo(String userid,String name,String signaturePath,String portraitPath){
+	public Userinfo(String userid,String name,String pass,String signaturePath,String portraitPath){
 		userID=userid;
 		username=name;
+		password=pass;
 		signature=signaturePath;
 		portrait=portraitPath;
 	}
@@ -138,7 +141,8 @@ public class Userinfo extends Access_db{
 		
 		rs=exeSqlQuery(sql);
 		try {
-			userName=rs.getString("username");   //convert rs to String 
+			rs.next();
+			userName=rs.getString("username");   //read the user name
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -156,7 +160,8 @@ public class Userinfo extends Access_db{
 		sql=sql+ "'" + getUserID() + "';";  
 		rs=exeSqlQuery(sql);
 		try {
-			signaturePath=rs.getString("signature");
+			rs.next();  
+			signaturePath=rs.getString("signature");  //read the signaturePath
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -172,12 +177,29 @@ public class Userinfo extends Access_db{
 		sql=sql+ "'" + getUserID() + "';";
 		rs=exeSqlQuery(sql);
 		try { 
-			portraitPath=rs.getString("portrait");
+			rs.next();
+			portraitPath=rs.getString("portrait"); //read the portrait
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return portraitPath;
 	}
-
+	
+	/** Determine whether the username is exist */
+	public boolean isUserNameExist(){
+		ResultSet rs=null;
+		//query the username on table userinfo
+		sql="select * from userinfo where username='"+getUsername()+"';";
+		boolean is_exist=false;  //do not exist
+		try{
+			rs=super.exeSqlQuery(sql);
+			if(rs.next()){
+				is_exist=true;   //username is exist, return true
+			}
+		}catch (Exception e) {
+			System.out.println(e.toString());// TODO: handle exception
+		}
+		return is_exist;
+	}
 }
