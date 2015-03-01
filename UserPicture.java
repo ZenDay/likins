@@ -13,7 +13,7 @@ public class UserPicture extends Access_db{
 	private String picturePath;   //path of picture
 	private String introduction;  //introduction of picture
 	private String sql;    //sql statement to perform various operations 
-	
+	 
 	/** constructor */
 	public UserPicture(){
 		userID="";
@@ -178,6 +178,7 @@ public class UserPicture extends Access_db{
 		sql="select ID from userinfo where userID=" + "'" + getUserID()+ "';" ; 
 		rs=super.exeSqlQuery(sql);
 		try {
+			rs.next();
 			id=rs.getInt("ID");          // convert rs to integer
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -228,6 +229,7 @@ public class UserPicture extends Access_db{
 		sql="select picture_path from user_picture where picture_id="+pictureId+";";
 		rs=super.exeSqlQuery(sql);
 		try {
+			rs.next();
 			path=rs.getString("picture_path");     //convert rs to String
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -245,6 +247,7 @@ public class UserPicture extends Access_db{
 		sql="select introduction from user_picture where ID="+pictureId+";";
 		rs=super.exeSqlQuery(sql);
 		try {
+			rs.next();
 			intro=rs.getString("introduction");     //convert rs to String
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -262,9 +265,10 @@ public class UserPicture extends Access_db{
 		sql="select time from user_picture where ID="+pictureId+";";
 		rs=super.exeSqlQuery(sql);
 		try {
+			rs.next();
 			time=rs.getString("time");     //convert rs to String
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch block 
 			e.printStackTrace();
 		}      
 		return time;
